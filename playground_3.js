@@ -31,17 +31,17 @@ function answer(n, k) {
   //c = 7, p = 7
 
   current = ll.head;
-  while (--k) {
+  let count_A = k;
+  while (--count_A) {
     prev = current;
     current = current.next;
   }
-  // c = 3, prev = 2
+  // c = 3, prev = 2, 
   
   let count;
   while (--n) {
     result.push(current.data);
     prev.next = current.next;
-    ll.length--;
 
     count = k;
     while (count--) {
@@ -49,8 +49,8 @@ function answer(n, k) {
       current = current.next;
     }
   }
-  result.push(current.data)
-  return result;
+  result.push(current.data);
+  console.log((`<${result.join(', ')}>`));
 }
 
-console.log(answer(7, 3));
+answer(7, 3);
