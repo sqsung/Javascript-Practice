@@ -68,14 +68,3 @@ dict.set("age", 19);
 dict.set("name", "James");
 dict.set("height", "182");
 console.log(dict);
-
-dict.remove('age');
-console.log(dict);
-console.log(dict.has('age'));
-console.log(dict.has('name'));
-console.log(dict.get('age'));
-console.log(dict.get('name'));
-
-console.log(dict.keys());
-console.log(dict.values());
-dict.each(printDictionary);

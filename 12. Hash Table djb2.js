@@ -1,4 +1,4 @@
-const HASH_SIZE = 1013; 
+const HASH_SIZE = 5; 
 
 //Element(): key, value 저장을 위한 생성자 
 function Element(key, value) {
