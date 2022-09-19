@@ -1,0 +1,11 @@
+function solution(s) {
+  let arr = s.split('').sort((a, b) => {
+      if(a.toLowerCase() < b.toLowerCase()) {
+          return 1;
+      } else {
+          return -1;
+      }
+  }).join();
+  return arr;
+}
+console.log(solution("apple"));
