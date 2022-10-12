@@ -73,7 +73,7 @@ Graph.prototype._bfsLoopVisit = function(vertex) {
 Graph.prototype._bfsShortestPath = function(vertex) {
     let queue = new Queue(); 
     queue.enqueue(vertex); 
-
+    
     let distance = {}; 
     let pre_visit = {}; 
     for(let vertex in this.edge) {
