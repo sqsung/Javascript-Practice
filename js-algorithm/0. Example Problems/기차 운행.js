@@ -11,6 +11,7 @@ function solution(order) {
 
         if(station[station.length - 1] === order[0]) {
             for(let i = station.length - 1; i >= 0; i--) {
+                if(station[i] !== order[0]) break;
                 if(station[i] === order[0]) {
                     station.pop();
                     order.shift();
@@ -22,6 +23,6 @@ function solution(order) {
 }
 
 
-// console.log(solution([1, 2, 3]));
-// console.log(solution([3, 2, 1]));
-// console.log(solution([3, 1, 2]));
+console.log(solution([1, 2, 3]));
+console.log(solution([3, 2, 1]));
+console.log(solution([3, 1, 2]));

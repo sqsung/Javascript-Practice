@@ -1,4 +1,3 @@
-
 function answer(giraffe) {
   let result = 0;
   let stack = [];
@@ -29,3 +28,21 @@ for (let i = 0; i < input.length; i++) {
   process.stdout.write(`#${i + 1} `);
   console.log(answer(input[i]));
 }
+
+
+/* solution 2:
+function solution(heights) {
+    let count = 0;
+
+    for(let i = 0; i < heights.length; i++) {
+        for(let j = i + 1; j < heights.length; j++) {
+            if(heights[j] <= heights[i]) count++;
+            else break;        
+        }
+    }
+    return count;
+}
+
+console.log(solution([7,4,12,1,13,11,12,6]));
+console.log(solution([20,1,19,18,15,4,6,8,3,3])); 
+*/ 
