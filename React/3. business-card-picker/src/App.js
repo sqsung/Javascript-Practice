@@ -28,8 +28,11 @@ export default function App() {
     return (
         <div>
             { cards.length > 0 && <button onClick={draw}>추첨하기</button> }
-            { selected.length > 0 && 
-                (<BusinessCard info={selected[selected.length - 1]} />) }
+            {/* { selected.length > 0 &&  */}
+                {/* (<BusinessCard info={selected[selected.length - 1]} />) } */}
+
+            { selected.length > 0
+                && selected.map(card => <BusinessCard info={card} key={card.phoneNumber} />)}
         </div>
     );
 }
