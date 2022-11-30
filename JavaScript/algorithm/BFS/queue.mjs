@@ -38,15 +38,4 @@ Queue.prototype.clear = function () {
   this.array = [];
 }
 
-let queue = new Queue([1, 2, 3, 4]);
-
-queue.dequeue(); 
-console.log(queue.front());
-console.log(queue);
-
-console.log(queue.size());
-queue.clear();
-console.log(queue);
-console.log(queue.size());
-
 export {Queue}; 

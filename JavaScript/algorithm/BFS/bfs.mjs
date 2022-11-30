@@ -1,4 +1,5 @@
 import {Queue} from "./queue.mjs";
+import {Stack} from "./stack.mjs";
 
 function Graph() {
     this.edge = {};
@@ -76,6 +77,7 @@ Graph.prototype._bfsShortestPath = function(vertex) {
     
     let distance = {}; 
     let pre_visit = {}; 
+
     for(let vertex in this.edge) {
         distance[vertex] = 0; 
         pre_visit[vertex] = null;
@@ -84,13 +86,13 @@ Graph.prototype._bfsShortestPath = function(vertex) {
     while(!queue.isEmpty()) {
         let vertex = queue.dequeue();
 
-        this.vvisited[vertex] = true;
+        this.visited[vertex] = true;
         console.log(`visit "${vertex}"`);
 
         let neighbors = this.edge[vertex];
         for(let i = 0; i < neighbors.length; i++) {
             if(!this.visited[neighbors[i]]) {
-                distance[neighbors[i] = distance[vertex] + 1];
+                distance[neighbors[i]] = distance[vertex] + 1;
                 pre_visit[neighbors[i]] = vertex;
                 queue.enqueue(neighbors[i]);
             }
@@ -99,8 +101,35 @@ Graph.prototype._bfsShortestPath = function(vertex) {
     return { distance, pre_visit }; 
 }
 
+//_from_to_path(): from 정점에서 to 정점으로 최단 경로 출력
+Graph.prototype._from_to_path = function(pre_visit, from, to) {
+    let stack = new Stack();
 
+    for (let v = to; v !== from; v = pre_visit[v]) {
+        stack.push(v);
+    }
+    stack.push(from);
 
+    while(!stack.isEmpty()) {
+        let v = stack.pop();
+        process.stdout.write(`${v} -> `);
+    }
+    console.log('end');
+}
+
+// shortestPath() : 다른 정점 간 최단 경로 탐색 
+Graph.prototype.shortestPath = function(startVertex) {
+    let result = this._bfsShortestPath(startVertex);
+    
+    console.log(result.distance);
+    console.log(result.pre_visit);
+
+    for(let vertex in this.edge) {
+        if (vertex === startVertex) continue; 
+
+        this._from_to_path(result.pre_visit, startVertex, vertex);
+    }
+}
 
 let graph = new Graph(); 
 let vertices = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; 
@@ -118,7 +147,7 @@ graph.addEdge("D", "H");
 graph.addEdge("B", "E");
 graph.addEdge("B", "F");
 graph.addEdge("E", "I");
-// graph.print();
-// console.log("");
+graph.print();
+console.log("");
 
-graph.bfs("A");
+graph.shortestPath('A');
