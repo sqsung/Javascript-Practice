@@ -1,0 +1,263 @@
+.wrap {
+	background-color: white;
+	width: 80%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.black-bg{
+  background-color: black;
+  width: 100%;
+  height: 1000px;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  padding-top: 20px;
+  position: relative;
+  color: white;
+  z-index:10;
+}
+
+header .gnb {
+  display: grid; 
+  width: 100%;
+  grid-template-columns: 250px 1fr 250px;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "logo gnb-menu menu"
+  "search search search";
+}
+
+header .gnb .gnb-menu {
+  grid-area: gnb-menu;
+  display: flex;
+  align-items: center;
+}
+
+header .gnb .gnb-menu ul {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+header .gnb .gnb-menu ul li {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+header .gnb .gnb-menu ul .active::before {
+  content: "";
+  height: 2px;
+  width: 15px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+header .gnb .gnb-menu ul li:hover::before {
+  content: "";
+  height: 2px;
+  width: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+header .gnb .gnb-menu ul li:hover {
+  color: lightgray;
+}
+
+header .gnb .gnb-menu ul .active::before {
+  content: "";
+  height: 2px;
+  width: 15px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+header .gnb .gnb-menu ul .active:hover {
+  color: white;
+}
+
+header .gnb .gnb-menu ul .active:hover::before {
+  width: 15px;
+}
+
+header .gnb .logo {
+  grid-area: logo;
+  width: 120px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+header .gnb .menu {
+  grid-area: menu;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 10%;
+}
+
+
+header .gnb .menu .profile {
+  background-color: white;
+  color: gray;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+header .gnb .menu .menu-hover {
+  padding: 10px 10px;
+}
+
+header .gnb .menu .menu-hover:hover {
+  background-color: rgba(172, 172, 172, 0.3);
+  border-radius: 30px;
+}
+
+header .gnb .search {
+  grid-area: search;
+  width: 70%;
+  height: 90px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+header .gnb .search .searchUl {
+  background-color: white;
+  color: black;
+  display: flex;
+  border-radius: 50px;
+}
+
+header .gnb .search .searchUl li {
+  width: 25%;
+  text-align: left;
+  padding: 20px 50px 20px 20px;
+  font-weight: bold;
+  position: relative;
+}
+
+header .gnb .search .searchUl li::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: calc(100% - 40px);
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-color:lightgray;
+}
+
+header .gnb .search .searchUl li:last-of-type::after {
+  display: none;
+} 
+
+header .gnb .search .searchUl li:hover {
+  background-color: rgba(172, 172, 172, 0.15);
+  border-radius: 50px;
+}
+header .gnb .search .searchUl li span {
+  color: gray;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* notice */
+
+.notice {
+  background-color: #ff385c;
+  border-radius: 14px;
+  text-align: center;
+  height: 320px;
+  z-index:10;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notice p {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  line-height: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.notice button {
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 5px 15px;
+  background-color: inherit;
+  color: white;
+  font-weight: bold;
+  border-radius: 14px;
+}
+
+/* main banner */ 
+.mainBanner{
+  height:600px;
+  border-radius: 14px;
+  
+  z-index:10;
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  background-image: url("https://i0.wp.com/travel-stained.com/wp-content/uploads/2019/09/BB8E26CA-47F7-4C3B-A8AA-5500BDA02053-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 70px;
+  background-position: center;
+}
+
+.mainBanner .content {
+  color: white;
+  text-align: center;
+}
+
+.mainBanner .content p{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.mainBanner .content button {
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.mainBanner .content button span {
+  background: linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%);
+  -webkit-background-clip: -webkit-text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

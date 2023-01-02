@@ -1,0 +1,19 @@
+.wrap {
+	background-color: white;
+	width: 80%;
+}
+
+.mt-sm{
+	margin-top: 25px;
+}
+
+.mt-lg{
+	margin-top: 50px;
+}
+
+.heading {
+	font-size: 2rem;
+	line-height: 2.5rem;
+	color: black;
+	font-weight: 900;
+}
