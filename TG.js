@@ -1,8 +1,9 @@
-function Foo(a, b) {
-    'use strict';
-    a = 100;
-    console.log(arguments);
-    console.log(a, b);
+function getThisBinding() {
+    return this;
 }
 
-Foo(1, 2);
+const thisArg = { a: 1 };
+console.log(getThisBinding()); // window 
+
+console.log(getThisBinding.apply(thisArg)); // { a: 1 }
+console.log(getThisBinding.call(thisArg)); // { a: 1 }
