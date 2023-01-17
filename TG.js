@@ -1,5 +1,15 @@
-const target = 'A AA AAA AAAA AAAAA'; 
-// 'A'가 최소 1번, 최대 3번 반복되는 문자열을 전역 검색  
-const regExp = /A{2}/g;
+const obj = { 
+    name: "James Sohn",
+    sayHi: () => console.log(`Hi ${this.name}`)    
+}
 
-console.log(target.match(regExp)); // --> ['A', 'AA', 'AAA'];
+obj.sayHi(); // Hi 
+
+const obj2 = {
+    name: "Steven Park",
+    sayHi() {
+        console.log(`Hi ${this.name}`);
+    }
+}
+
+obj2.sayHi(); // Hi Steven Park
