@@ -1,8 +1,6 @@
-const array = [1, 2, 3];
-const iterator = array[Symbol.iterator]();
+let secondsSinceCall = 0;
 
-console.log("next" in iterator);
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
+const countingSeconds = setInterval(() => {
+    console.log(++secondsSinceCall);
+    if (secondsSinceCall === 5) clearInterval(countingSeconds);
+}, 1000);
