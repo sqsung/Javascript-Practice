@@ -1,6 +1,16 @@
-let secondsSinceCall = 0;
+const timered = () => {
+    console.log("Timered Function!");
+    return;
+};
 
-const countingSeconds = setInterval(() => {
-    console.log(++secondsSinceCall);
-    if (secondsSinceCall === 5) clearInterval(countingSeconds);
-}, 1000);
+const nonTimered = () => {
+    console.log("Non-Timered Function!");
+    return;
+};
+
+setTimeout(timered, 3000);
+nonTimered();
+
+// Non-Timered Function!
+// --- 3초 대기 ---
+// Timered Function!
