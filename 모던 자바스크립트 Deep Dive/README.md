@@ -5,5 +5,5 @@
 > _저자: 이웅모_
 
 <div align=center>
-  <img src="https://github.com/sqsung/TIL/assets/112310899/5626b197-a442-49dd-8a85-e714689ab8aa" />
+  <img src="https://github.com/sqsung/TIL/assets/112310899/5626b197-a442-49dd-8a85-e714689ab8aa" width="500px" />
 </div>
