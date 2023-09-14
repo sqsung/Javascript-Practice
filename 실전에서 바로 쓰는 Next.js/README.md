@@ -5,5 +5,5 @@
 > _지은이: 마셀 리바, 옮긴이: 박수현_
 
 <div align=center>
-  <img src="https://github.com/sqsung/TIL/assets/112310899/99799bc3-e6a6-4756-8012-7a1a9f95204b" />
+  <img src="https://github.com/sqsung/TIL/assets/112310899/497bab7c-d7a2-4752-995d-11ee10a053bb" style="width: 500px" />
 </div>
